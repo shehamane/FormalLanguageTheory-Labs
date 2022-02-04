@@ -1,0 +1,9 @@
+$EXTRACTIONS=15
+[S]::=[K][B]d
+[S]::=[A][K]d
+[K]::=a[K]b
+[K]::=ab
+[A]::=a[A]
+[A]::=a
+[B]::=b
+[B]::=[B]b

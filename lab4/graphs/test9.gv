@@ -1,0 +1,102 @@
+// LR(0) Automata
+digraph {
+	A0 [label="[S!] -> .[S]$
+[S] -> .a[Fa]" height=2 shape=polygon width=1]
+	A1 [label="[S!] -> [S].$" height=2 shape=polygon width=1]
+	A2 [label="[S] -> a.[Fa]
+[Fa] -> .abb[Ad]ebb[Aa][K]a
+[Fa] -> .abb[Ad]ebb[Aa]a" height=2 shape=polygon width=1]
+	A3 [label="[S!] -> [S]$." height=2 shape=polygon width=1]
+	A4 [label="[S] -> a[Fa]." height=2 shape=polygon width=1]
+	A5 [label="[Fa] -> a.bb[Ad]ebb[Aa][K]a
+[Fa] -> a.bb[Ad]ebb[Aa]a" height=2 shape=polygon width=1]
+	A6 [label="[Fa] -> ab.b[Ad]ebb[Aa][K]a
+[Fa] -> ab.b[Ad]ebb[Aa]a" height=2 shape=polygon width=1]
+	A7 [label="[Fa] -> abb.[Ad]ebb[Aa][K]a
+[Fa] -> abb.[Ad]ebb[Aa]a
+[Ad] -> .a[Ab]d
+[Ad] -> .ad" height=2 shape=polygon width=1]
+	A8 [label="[Fa] -> abb[Ad].ebb[Aa][K]a
+[Fa] -> abb[Ad].ebb[Aa]a" height=2 shape=polygon width=1]
+	A9 [label="[Ad] -> a.[Ab]d
+[Ad] -> a.d
+[Ab] -> .a[Ab]b
+[Ab] -> .ab" height=2 shape=polygon width=1]
+	B0 [label="[Fa] -> abb[Ad]e.bb[Aa][K]a
+[Fa] -> abb[Ad]e.bb[Aa]a" height=2 shape=polygon width=1]
+	B1 [label="[Ad] -> a[Ab].d" height=2 shape=polygon width=1]
+	B2 [label="[Ad] -> ad." height=2 shape=polygon width=1]
+	B3 [label="[Ab] -> a.[Ab]b
+[Ab] -> a.b
+[Ab] -> .a[Ab]b
+[Ab] -> .ab" height=2 shape=polygon width=1]
+	B4 [label="[Fa] -> abb[Ad]eb.b[Aa][K]a
+[Fa] -> abb[Ad]eb.b[Aa]a" height=2 shape=polygon width=1]
+	B5 [label="[Ad] -> a[Ab]d." height=2 shape=polygon width=1]
+	B6 [label="[Ab] -> a[Ab].b" height=2 shape=polygon width=1]
+	B7 [label="[Ab] -> ab." height=2 shape=polygon width=1]
+	B8 [label="[Fa] -> abb[Ad]ebb.[Aa][K]a
+[Fa] -> abb[Ad]ebb.[Aa]a
+[Aa] -> .a[Ab]a
+[Aa] -> .aa" height=2 shape=polygon width=1]
+	B9 [label="[Ab] -> a[Ab]b." height=2 shape=polygon width=1]
+	C0 [label="[Fa] -> abb[Ad]ebb[Aa].[K]a
+[Fa] -> abb[Ad]ebb[Aa].a
+[K] -> .[Ab]
+[Ab] -> .a[Ab]b
+[Ab] -> .ab" height=2 shape=polygon width=1]
+	C1 [label="[Aa] -> a.[Ab]a
+[Aa] -> a.a
+[Ab] -> .a[Ab]b
+[Ab] -> .ab" height=2 shape=polygon width=1]
+	C2 [label="[Fa] -> abb[Ad]ebb[Aa][K].a" height=2 shape=polygon width=1]
+	C3 [label="[Fa] -> abb[Ad]ebb[Aa]a.
+[Ab] -> a.[Ab]b
+[Ab] -> a.b
+[Ab] -> .a[Ab]b
+[Ab] -> .ab" height=2 shape=polygon width=1]
+	C4 [label="[K] -> [Ab]." height=2 shape=polygon width=1]
+	C5 [label="[Aa] -> a[Ab].a" height=2 shape=polygon width=1]
+	C6 [label="[Aa] -> aa.
+[Ab] -> a.[Ab]b
+[Ab] -> a.b
+[Ab] -> .a[Ab]b
+[Ab] -> .ab" height=2 shape=polygon width=1]
+	C7 [label="[Fa] -> abb[Ad]ebb[Aa][K]a." height=2 shape=polygon width=1]
+	C8 [label="[Aa] -> a[Ab]a." height=2 shape=polygon width=1]
+	A0 -> A1 [label="[S]"]
+	A0 -> A2 [label=a]
+	A1 -> A3 [label="$"]
+	A2 -> A4 [label="[Fa]"]
+	A2 -> A5 [label=a]
+	A5 -> A6 [label=b]
+	A6 -> A7 [label=b]
+	A7 -> A8 [label="[Ad]"]
+	A7 -> A9 [label=a]
+	A8 -> B0 [label=e]
+	A9 -> B1 [label="[Ab]"]
+	A9 -> B2 [label=d]
+	A9 -> B3 [label=a]
+	B0 -> B4 [label=b]
+	B1 -> B5 [label=d]
+	B3 -> B6 [label="[Ab]"]
+	B3 -> B7 [label=b]
+	B3 -> B3 [label=a]
+	B4 -> B8 [label=b]
+	B6 -> B9 [label=b]
+	B8 -> C0 [label="[Aa]"]
+	B8 -> C1 [label=a]
+	C0 -> C2 [label="[K]"]
+	C0 -> C3 [label=a]
+	C0 -> C4 [label="[Ab]"]
+	C1 -> C5 [label="[Ab]"]
+	C1 -> C6 [label=a]
+	C2 -> C7 [label=a]
+	C3 -> B6 [label="[Ab]"]
+	C3 -> B7 [label=b]
+	C3 -> B3 [label=a]
+	C5 -> C8 [label=a]
+	C6 -> B6 [label="[Ab]"]
+	C6 -> B7 [label=b]
+	C6 -> B3 [label=a]
+}

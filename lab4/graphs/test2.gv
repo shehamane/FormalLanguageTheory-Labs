@@ -1,0 +1,42 @@
+// LR(0) Automata
+digraph {
+	A0 [label="[S!] -> .[S]$
+[S] -> .w[Ab]" height=2 shape=polygon width=1]
+	A1 [label="[S!] -> [S].$" height=2 shape=polygon width=1]
+	A2 [label="[S] -> w.[Ab]
+[Ab] -> .a[Ab][b/B]b
+[Ab] -> .ab
+[Ab] -> .a[Ab]b" height=2 shape=polygon width=1]
+	A3 [label="[S!] -> [S]$." height=2 shape=polygon width=1]
+	A4 [label="[S] -> w[Ab]." height=2 shape=polygon width=1]
+	A5 [label="[Ab] -> a.[Ab][b/B]b
+[Ab] -> a.b
+[Ab] -> a.[Ab]b
+[Ab] -> .a[Ab][b/B]b
+[Ab] -> .ab
+[Ab] -> .a[Ab]b" height=2 shape=polygon width=1]
+	A6 [label="[Ab] -> a[Ab].[b/B]b
+[Ab] -> a[Ab].b
+[b/B] -> .[b/B]e
+[b/B] -> .e" height=2 shape=polygon width=1]
+	A7 [label="[Ab] -> ab." height=2 shape=polygon width=1]
+	A8 [label="[Ab] -> a[Ab][b/B].b
+[b/B] -> [b/B].e" height=2 shape=polygon width=1]
+	A9 [label="[Ab] -> a[Ab]b." height=2 shape=polygon width=1]
+	B0 [label="[b/B] -> e." height=2 shape=polygon width=1]
+	B1 [label="[Ab] -> a[Ab][b/B]b." height=2 shape=polygon width=1]
+	B2 [label="[b/B] -> [b/B]e." height=2 shape=polygon width=1]
+	A0 -> A1 [label="[S]"]
+	A0 -> A2 [label=w]
+	A1 -> A3 [label="$"]
+	A2 -> A4 [label="[Ab]"]
+	A2 -> A5 [label=a]
+	A5 -> A6 [label="[Ab]"]
+	A5 -> A7 [label=b]
+	A5 -> A5 [label=a]
+	A6 -> A8 [label="[b/B]"]
+	A6 -> A9 [label=b]
+	A6 -> B0 [label=e]
+	A8 -> B1 [label=b]
+	A8 -> B2 [label=e]
+}

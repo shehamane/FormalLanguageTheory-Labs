@@ -1,0 +1,17 @@
+// Stack Automate
+digraph {
+	q1 [label=q1]
+	q2 [label=q2]
+	q3 [label=q3]
+	q4 [label=q4]
+	q5 [label=q5]
+	q1 -> q1 [label="a, Z/AZ"]
+	q1 -> q2 [label="b, Z/Z"]
+	q2 -> q1 [label="a, Z/Z"]
+	q2 -> q3 [label="b, Z/Z"]
+	q3 -> q1 [label="a, Z/Z"]
+	q3 -> q4 [label="b, Z/Z"]
+	q4 -> q1 [label="a, A/"]
+	q4 -> q5 [label="b, Z/"]
+	q5 -> q5 [label="!!, Z/"]
+}

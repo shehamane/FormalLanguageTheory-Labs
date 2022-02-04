@@ -1,0 +1,38 @@
+// LR(0) Automata
+digraph {
+	A0 [label="[S!] -> .[S]$
+[S] -> .c[S]c
+[S] -> .d[S]d
+[S] -> .cac" height=2 shape=polygon width=1]
+	A1 [label="[S!] -> [S].$" height=2 shape=polygon width=1]
+	A2 [label="[S] -> c.[S]c
+[S] -> c.ac
+[S] -> .c[S]c
+[S] -> .d[S]d
+[S] -> .cac" height=2 shape=polygon width=1]
+	A3 [label="[S] -> d.[S]d
+[S] -> .c[S]c
+[S] -> .d[S]d
+[S] -> .cac" height=2 shape=polygon width=1]
+	A4 [label="[S!] -> [S]$." height=2 shape=polygon width=1]
+	A5 [label="[S] -> c[S].c" height=2 shape=polygon width=1]
+	A6 [label="[S] -> ca.c" height=2 shape=polygon width=1]
+	A7 [label="[S] -> d[S].d" height=2 shape=polygon width=1]
+	A8 [label="[S] -> c[S]c." height=2 shape=polygon width=1]
+	A9 [label="[S] -> cac." height=2 shape=polygon width=1]
+	B0 [label="[S] -> d[S]d." height=2 shape=polygon width=1]
+	A0 -> A1 [label="[S]"]
+	A0 -> A2 [label=c]
+	A0 -> A3 [label=d]
+	A1 -> A4 [label="$"]
+	A2 -> A5 [label="[S]"]
+	A2 -> A6 [label=a]
+	A2 -> A2 [label=c]
+	A2 -> A3 [label=d]
+	A3 -> A7 [label="[S]"]
+	A3 -> A2 [label=c]
+	A3 -> A3 [label=d]
+	A5 -> A8 [label=c]
+	A6 -> A9 [label=c]
+	A7 -> B0 [label=d]
+}

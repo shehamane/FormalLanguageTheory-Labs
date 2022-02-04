@@ -1,0 +1,3 @@
+A=bB+cC+ bc
+B=cA+aB+bC + ab
+C=bA+cB+aC + cc

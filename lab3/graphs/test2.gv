@@ -1,0 +1,8 @@
+// Stack Automate
+digraph {
+	q1 [label=q1]
+	q2 [label=q2]
+	q1 -> q2 [label="a, A/AA"]
+	q2 -> q2 [label="b, B/B"]
+	q2 -> q2 [label="b, A/"]
+}

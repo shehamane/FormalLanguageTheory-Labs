@@ -1,0 +1,64 @@
+// LR(0) Automata
+digraph {
+	A0 [label="[S!] -> .[S]$
+[S] -> .abb[Ad]ebb[As]" height=2 shape=polygon width=1]
+	A1 [label="[S!] -> [S].$" height=2 shape=polygon width=1]
+	A2 [label="[S] -> a.bb[Ad]ebb[As]" height=2 shape=polygon width=1]
+	A3 [label="[S!] -> [S]$." height=2 shape=polygon width=1]
+	A4 [label="[S] -> ab.b[Ad]ebb[As]" height=2 shape=polygon width=1]
+	A5 [label="[S] -> abb.[Ad]ebb[As]
+[Ad] -> .ad
+[Ad] -> .a[Ab]d" height=2 shape=polygon width=1]
+	A6 [label="[S] -> abb[Ad].ebb[As]" height=2 shape=polygon width=1]
+	A7 [label="[Ad] -> a.d
+[Ad] -> a.[Ab]d
+[Ab] -> .ab
+[Ab] -> .a[Ab]b" height=2 shape=polygon width=1]
+	A8 [label="[S] -> abb[Ad]e.bb[As]" height=2 shape=polygon width=1]
+	A9 [label="[Ad] -> ad." height=2 shape=polygon width=1]
+	B0 [label="[Ad] -> a[Ab].d" height=2 shape=polygon width=1]
+	B1 [label="[Ab] -> a.b
+[Ab] -> a.[Ab]b
+[Ab] -> .ab
+[Ab] -> .a[Ab]b" height=2 shape=polygon width=1]
+	B2 [label="[S] -> abb[Ad]eb.b[As]" height=2 shape=polygon width=1]
+	B3 [label="[Ad] -> a[Ab]d." height=2 shape=polygon width=1]
+	B4 [label="[Ab] -> ab." height=2 shape=polygon width=1]
+	B5 [label="[Ab] -> a[Ab].b" height=2 shape=polygon width=1]
+	B6 [label="[S] -> abb[Ad]ebb.[As]
+[As] -> .as
+[As] -> .a[Ab]s" height=2 shape=polygon width=1]
+	B7 [label="[Ab] -> a[Ab]b." height=2 shape=polygon width=1]
+	B8 [label="[S] -> abb[Ad]ebb[As]." height=2 shape=polygon width=1]
+	B9 [label="[As] -> a.s
+[As] -> a.[Ab]s
+[Ab] -> .ab
+[Ab] -> .a[Ab]b" height=2 shape=polygon width=1]
+	C0 [label="[As] -> as." height=2 shape=polygon width=1]
+	C1 [label="[As] -> a[Ab].s" height=2 shape=polygon width=1]
+	C2 [label="[As] -> a[Ab]s." height=2 shape=polygon width=1]
+	A0 -> A1 [label="[S]"]
+	A0 -> A2 [label=a]
+	A1 -> A3 [label="$"]
+	A2 -> A4 [label=b]
+	A4 -> A5 [label=b]
+	A5 -> A6 [label="[Ad]"]
+	A5 -> A7 [label=a]
+	A6 -> A8 [label=e]
+	A7 -> A9 [label=d]
+	A7 -> B0 [label="[Ab]"]
+	A7 -> B1 [label=a]
+	A8 -> B2 [label=b]
+	B0 -> B3 [label=d]
+	B1 -> B4 [label=b]
+	B1 -> B5 [label="[Ab]"]
+	B1 -> B1 [label=a]
+	B2 -> B6 [label=b]
+	B5 -> B7 [label=b]
+	B6 -> B8 [label="[As]"]
+	B6 -> B9 [label=a]
+	B9 -> C0 [label=s]
+	B9 -> C1 [label="[Ab]"]
+	B9 -> B1 [label=a]
+	C1 -> C2 [label=s]
+}
